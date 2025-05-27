@@ -3,9 +3,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
-import User from "./models/User.js";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
 
 // Load environment variables from .env file
 dotenv.config();
