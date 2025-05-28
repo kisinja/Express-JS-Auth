@@ -62,6 +62,10 @@ const bookSchema = new mongoose.Schema({
     isBookmarked:{
         type:Boolean,
         default: false, // Default value for isBookmarked
+    },
+    isAvailable:{
+        type:Boolean,
+        default: true, // Default value for isAvailable
     }
 }, {timestamps:true});
 
