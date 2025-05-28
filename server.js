@@ -4,6 +4,9 @@ import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
 
+import { books } from "./utils/index.js";
+import Book from "./models/Book.js";
+
 // Load environment variables from .env file
 dotenv.config();
 
@@ -32,6 +35,9 @@ const connectToDatabase = async () => {
     await mongoose.connect(process.env.MONGO_URI).then(() => {
       console.log("Connected to the database successfully!");
 
+      // Seed the database with initial books data
+      //Book.insertMany(books);
+
       // Listen for incoming requests
       app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
@@ -48,6 +54,8 @@ connectToDatabase();
 
 // import routes
 import authRoutes from "./routes/auth.js";
+import bookRoutes from "./routes/books.js";
 
 // Use routes
 app.use("/api/auth", authRoutes);
+app.use("/api/books", bookRoutes);
