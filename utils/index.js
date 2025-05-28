@@ -187,3 +187,10 @@ export const books = [
         isBookmarked: true,
     }
 ];
+
+const car = {
+    engine: "V8",
+    wheels: 4,
+};
+
+car.make = "Toyota";
